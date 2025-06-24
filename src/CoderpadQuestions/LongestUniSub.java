@@ -11,6 +11,21 @@ public class LongestUniSub {
     static int[] longestUniformSubstring(String input) {
         int longestStart = -1;
         int longestLength = 0;
+       int i = 1;
+       int length = input.length();
+       while(i<length){
+           int start = i-1;
+           int currentlength = 1;
+           while(i < length && input.charAt(i) == input.charAt(i-1)){
+               i++;
+               currentlength++;
+           }
+           if(currentlength > longestLength){
+               longestStart = start;
+               longestLength = currentlength;
+           }
+           i++;
+       }
 
 
         return new int[]{longestStart, longestLength};
