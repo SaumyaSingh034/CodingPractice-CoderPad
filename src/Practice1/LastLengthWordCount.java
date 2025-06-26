@@ -10,7 +10,7 @@ public class LastLengthWordCount {
     }
 
     private static void lastWordCount(String str) {
-        
+
         String[] words = str.split("\\s+");
         String lastWord = words[words.length-1];
         System.out.println(lastWord.length());
