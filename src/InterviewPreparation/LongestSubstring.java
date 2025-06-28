@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class LongestSubstring {
     public static void main(String[] args){
-        String str = "abcabcbb";
+        String str = "ssaaUUmmmYYYaaaaa";
         longestUniqueSubstring123(str);
     }
 
