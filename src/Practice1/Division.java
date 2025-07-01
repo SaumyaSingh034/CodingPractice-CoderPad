@@ -3,7 +3,7 @@ package Practice1;
 public class Division
 {
     public static void main(String[] args){
-        int dividend = 20;
+        int dividend = 10;
         int divisor = 3;
         int quotient = divide123(dividend, divisor);
         System.out.println(quotient);
