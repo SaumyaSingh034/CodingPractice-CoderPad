@@ -9,6 +9,6 @@ public class LengthLastWord {
     private static void findLengthofLastWord(String str) {
         String[] words = str.split("\\s+");
         System.out.println(words[words.length-1].length());
-        
+
     }
 }
