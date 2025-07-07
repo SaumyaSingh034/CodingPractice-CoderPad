@@ -15,7 +15,7 @@ public class Project {
         System.out.println(a+" --> "+b);
     }
 
-    
+
     public static void main(String[] args){
         Project p = new Project();
         Project p1 = new Project(5,8);
