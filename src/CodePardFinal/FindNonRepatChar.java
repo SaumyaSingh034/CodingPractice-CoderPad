@@ -10,7 +10,7 @@ public class FindNonRepatChar {
         if(str == null || str.isEmpty())
             throw new IllegalArgumentException("");
         for(char c : str.toCharArray()){
-            
+
         }
     }
 }
