@@ -11,6 +11,9 @@ public class FirstNonRepeatingWord {
     }
 
     private static Character findFirstNonRepeatingWords(String input) {
+        if(input.isEmpty()){
+            return '_';
+        }
         Map<Character, Integer> dataMap = new HashMap<>();
         for(char c : input.toCharArray()){
             dataMap.put(c, dataMap.getOrDefault(c, 0)+1);
