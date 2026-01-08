@@ -30,5 +30,6 @@ public class LongestSubstring {
         }
 
         System.out.println(str.substring(start, start+maxLength));
+        System.out.println(str.substring (maxLength));
     }
 }
