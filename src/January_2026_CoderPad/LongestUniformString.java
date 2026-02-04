@@ -6,7 +6,8 @@ import java.util.Set;
 
 public class LongestUniformString {
     public static void main(String[] args){
-        String str = "abcabcbb";
+        //String str = "abcabcbb";
+        String str = "saumyasingh";
         System.out.println(longestUnifromSubString(str));
     }
 
