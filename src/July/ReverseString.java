@@ -7,7 +7,7 @@ public class ReverseString {
         System.out.println(reverseString(str1));
     }
 
-    private static String reverseString(String str) {
+    public static String reverseString(String str) {
         if(str == null || str.isEmpty())
             throw new IllegalArgumentException("String is empty or null");
         if(str.length() == 1)
