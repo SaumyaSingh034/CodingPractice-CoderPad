@@ -14,16 +14,18 @@ public class ReverseVowelOfString {
         }
         int left = 0;
         int right = input.length()-1;
-        char[] arr = input.toCharArray();
+        char[] arr = input.toLowerCase().toCharArray();
         while(left < right){
-            if(isVowel(arr[left]) && isVowel(arr[right])){
-                char temp = arr[left];
-                arr[left] = arr[right];
-                arr[right] = temp;
+            if(isVowel(arr[left])){
+                if( isVowel(arr[right])) {
+                    char temp = arr[left];
+                    arr[left] = arr[right];
+                    arr[right] = temp;
 
+                }
+                right--;
             }
             left++;
-            right--;
         }
         System.out.println(new String(arr));
 
