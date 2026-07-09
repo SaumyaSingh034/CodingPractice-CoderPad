@@ -1,17 +1,46 @@
 package July2026;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class AnagramString
 {
     public static void main(String[] args){
-        String s = "anagram";
-        String t = "nagaram";
+        String s = "aaab";
+        String t = "abbb";
         Boolean result = checkTheStringareAnagram(s, t);
         System.out.println(result);
         anagramWithOutSort(s, t);
+        System.out.println(anagramWithOutSortWithHashMap(s, t));
+    }
+
+    private static Boolean anagramWithOutSortWithHashMap(String s, String t) {
+        Map<Character, Integer> data = new HashMap<>();
+        if(s == null || t==null || s.isEmpty() || t.isEmpty()){
+            throw new IllegalArgumentException("The STring are Empty");
+        }
+        if(s.length()!= t.length())
+            return false;
+        for(char c : s.toCharArray()){
+            data.put(c, data.getOrDefault(c, 0)+1);
+        }
+        for(char c : t.toCharArray()){
+            if(data.containsKey(c)){
+                data.put(c, data.getOrDefault(c, 0)-1);
+            }else{
+               return false;
+            }
+        }
+        boolean result= false;
+        for(Map.Entry<Character, Integer> dataSet : data.entrySet()){
+            if(dataSet.getValue()<0){
+                return false;
+            }else if(dataSet.getValue() == 0){
+                result = true;
+            } else
+                return false;
+        }
+        System.out.println(data);
+        return result;
     }
 
     private static Boolean anagramWithOutSort(String s, String t) {
