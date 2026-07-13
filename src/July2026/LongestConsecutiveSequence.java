@@ -1,31 +1,35 @@
 package July2026;
 
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Set;
 
 public class LongestConsecutiveSequence {
     public static void main(String[] args){
         int[] arr = {100,4,200,1,3,2};
         int[] arr1 = {9,1,4,7,3,-1,0,5,8,-1,6};
-        findLongestConsecutive(arr);
-        findLongestConsecutive(arr1);
+        System.out.println(findLongestConsecutive(arr));
+        System.out.println(findLongestConsecutive(arr1));
+
     }
 
-    private static void findLongestConsecutive(int[] arr) {
+    private static int findLongestConsecutive(int[] arr) {
         Arrays.sort(arr);
-        for(int i = 1;i< arr.length;i++){
-            if(arr[i-1] == arr[i]){
-                continue;
-            }
+       int currentLength = 1;
+       int maxLength = 1;
+       for(int i=1;i< arr.length;i++){
+           if(arr[i-1] == arr[i]){
+               continue;
+           }
+           if(arr[i] == arr[i-1]+1){
+               currentLength++;
+           } else{
+              maxLength =  Math.max(maxLength, currentLength);
+               currentLength =1;
+           }
+       }
+        maxLength = Math.max(maxLength, currentLength);
 
-            else if (arr[i - 1] + 1 != arr[i]) {
-                    System.out.println(arr[i - 1]);
-                    break;
-                }
+        return maxLength;
 
-        }
-        System.out.println(Arrays.toString(arr));
+
     }
 }
